@@ -1,5 +1,4 @@
 # Import Splinter and BeautifulSoup
-#from xml.dom.xmlbuilder import _DOMInputSourceCharacterStreamType
 from splinter import Browser
 from bs4 import BeautifulSoup as soup 
 from webdriver_manager.chrome import ChromeDriverManager
@@ -11,7 +10,7 @@ import pandas as pd
 def scrape_all():
 
     #set executable path 
-    executable_path = {'executable_path': ChromeDriverManager().install()}  
+    executable_path = {'executable_path': ChromeDriverManager(version='98.0.4758.102').install()}  
     browser = Browser('chrome', **executable_path, headless = False)
 
     news_title, news_paragraph = mars_news(browser)
